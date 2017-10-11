@@ -1,0 +1,2 @@
+module Api::WigsHelper
+end
