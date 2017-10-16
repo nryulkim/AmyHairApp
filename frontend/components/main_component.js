@@ -1,31 +1,46 @@
 import React, { Component } from 'react';
 import {
-  Button,
   StyleSheet,
-  Text,
-  View,
 } from 'react-native';
+import {
+  Container, Header, Title, Content, Footer, FooterTab, Button, Icon, Badge
+} from 'native-base';
+import windowSize from '../util/constants'
+import Drawer from './drawer/drawer_component';
 
 export default class Root extends Component {
   render() {
     return (
-      <View>
-        <Button
-          title="Up"
-          onPress={() => console.log('up')}/>
-        <Button
-          title="Down"
-          onPress={() => console.log('down')}/>
-      </View>
+      <Container style={{width: windowSize.width}}>
+        <Header style={styles.header}>
+          <Title style={styles.title}>Amy Hair</Title>
+          <Button transparent>
+            <Icon name='ios-menu' />
+          </Button>
+        </Header>
+        <Content style={styles.content}>
+        </Content>
+        <Footer style={styles.footer}>
+          <Drawer></Drawer>
+        </Footer>
+      </Container>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  counter: {
-    padding: 30,
-    alignSelf: 'center',
-    fontSize: 26,
-    fontWeight: 'bold',
+  header: {
+    justifyContent: 'space-between',
+    backgroundColor: '#039BE5',
+    height: 76
   },
+  title: {
+    fontSize: 26,
+    padding: 15
+  },
+  content: {
+  },
+  footer: {
+    backgroundColor: '#039BE5',
+  }
 });
