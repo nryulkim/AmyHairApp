@@ -5,6 +5,9 @@ import RootMiddleware from '../middlewares/root_middleware';
 import merge from 'lodash.merge'
 
 const _default = {
+  page: {
+    active: 'list'
+  },
   collections: {
     active: -1,
     list: {}
@@ -14,7 +17,6 @@ const _default = {
 
 export default (state = {}) => {
   state = merge(_default, state);
-
 
   return createStore(
     RootReducer,

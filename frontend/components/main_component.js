@@ -6,7 +6,7 @@ import {
   Container, Header, Title, Content, Footer, FooterTab, Button, Icon, Badge
 } from 'native-base';
 import windowSize from '../util/constants'
-import Drawer from './drawer/drawer_component';
+import Drawer from './drawer/drawer_container';
 
 export default class Root extends Component {
   render() {
