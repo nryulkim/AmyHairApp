@@ -11,4 +11,5 @@ class Wig < ApplicationRecord
   validates :name, :collection_id, presence: true
 
   belongs_to :collection
+  has_many :products, dependent: :destroy
 end
