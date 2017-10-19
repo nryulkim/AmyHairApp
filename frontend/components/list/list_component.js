@@ -3,7 +3,7 @@ import {
   StyleSheet
 } from 'react-native';
 import {
-  List, Button, Text, Icon
+  Container, Card, CardItem, Text, Icon
 } from 'native-base';
 
 const test1 = ['Hello', 'Bye']
@@ -18,7 +18,8 @@ class PageList extends Component {
   constructor(props){
     super(props);
     this.state = {
-      data: test1
+      data: test1,
+      chosen: []
     };
 
     this.handlePress = this.handlePress.bind(this);
@@ -26,26 +27,53 @@ class PageList extends Component {
   }
 
   handlePress(item){
-    return (
-      () => {
-        this.setState({data: other[item]});
+    let { data, chosen } = this.state;
+    if(item == '...'){
+      return () => {
+        chosen.pop();
+        lastItem = chosen[chosen.length - 1];
+        if(!lastItem){
+          data = test1
+        }
+        else{
+          data = other[lastItem]
+        }
+        this.setState({
+          data: data,
+          chosen: chosen
+        });
       }
-    )
+    }
+    else{
+      return (
+        () => {
+          chosen.push(item)
+          this.setState({
+            data: other[item],
+            chosen: chosen
+          });
+        }
+      )
+    }
   }
 
   renderItem(item){
     return(
-      <Button block bordered dark style={ styles.button } onPress={this.handlePress(item)}>
+      <CardItem style={ styles.button } button onPress={this.handlePress(item)}>
         <Text>{item}</Text>
         <Icon name='ios-arrow-forward'/>
-      </Button>
+      </CardItem>
     )
   }
 
   render(){
-    const { data } = this.state;
+    let { data, chosen } = this.state;
+    if(chosen.length > 0){
+      data = data.slice(0);
+      data = ['...'].concat(data)
+    }
     return(
-      <List
+      <Card
         dataArray={ data }
         renderRow={ this.renderItem }
         />
@@ -59,7 +87,5 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: 'space-between',
     backgroundColor: '#ececec',
-    height: 76,
-    marginBottom: 1
   }
 });
