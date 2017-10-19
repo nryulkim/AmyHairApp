@@ -11,4 +11,5 @@ class Product < ApplicationRecord
   validates :name, :wig_id, presence: true
 
   belongs_to :wig
+  has_one :collection, through: :wig
 end

@@ -10,14 +10,14 @@ collections = {
   'Benewig Collection': {
     'Benewig Full Wig': [
       'Alicia', 'Halle_1', 'Keyshia', 'Mary', 'Nicki'
-    ]
+    ],
     'Benewig Lace Wig': [
       'Ariana', 'Beyonce', 'Ciara2', 'Gina', 'Janet', 'Jetty', 'Kess',
       'Mariah', 'Mya', 'Nana', 'Rihanna', 'Tama', 'Tyra', 'Whiteney'
     ]
-  }
+  },
   'Indu Gold': {
-    'Indu Gold Full Wig': ['Lena']
+    'Indu Gold Full Wig': ['Lena'],
     'Indu Gold Lace Wig': [
       'Amery', 'Chanel', 'Cleo', 'Coco', 'Emma', 'Rhona', 'Ricca',
       'Roma', 'Rose', 'Ruby', 'Sista', 'Sofia', 'Tess', 'Tiara', 'Vera',
