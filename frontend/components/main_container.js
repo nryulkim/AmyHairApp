@@ -4,7 +4,8 @@ import {getAllCollections} from '../actions/collection_actions'
 import Main from './main_component';
 
 const mapStateToProps = state => ({
-  collections: state.collections
+  collections: state.collections,
+  page: state.page
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
+  StyleSheet
 } from 'react-native';
 import {
   Container, Header, Title, Content, Footer, FooterTab, Button, Icon, Badge
 } from 'native-base';
 import windowSize from '../util/constants'
 import Drawer from './drawer/drawer_container';
+import List from './list/list_container';
 
 export default class Root extends Component {
+  getContent(){
+    const { active } = this.props.page;
+    switch(active){
+      case 'product':
+        return;
+      case 'list':
+        return <List/>;
+      case 'search':
+        return;
+    }
+  }
   render() {
+    const { active } = this.props.page;
     return (
       <Container style={{width: windowSize.width}}>
         <Header style={styles.header}>
           <Title style={styles.title}>Amy Hair</Title>
           <Button transparent>
-            <Icon name='ios-menu' />
+            <Icon name='ios-menu'/>
           </Button>
         </Header>
         <Content style={styles.content}>
+          { this.getContent() }
         </Content>
         <Footer style={styles.footer}>
           <Drawer></Drawer>
