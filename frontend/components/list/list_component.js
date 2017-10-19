@@ -24,25 +24,29 @@ class PageList extends Component {
 
     this.handlePress = this.handlePress.bind(this);
     this.renderItem = this.renderItem.bind(this);
+    this.backFunc = this.backFunc.bind(this);
+  }
+
+  backFunc() {
+    let { data, chosen } = this.state;
+    chosen.pop();
+    lastItem = chosen[chosen.length - 1];
+    if(!lastItem){
+      data = test1
+    }
+    else{
+      data = other[lastItem]
+    }
+    this.setState({
+      data: data,
+      chosen: chosen
+    });
   }
 
   handlePress(item){
     let { data, chosen } = this.state;
     if(item == '...'){
-      return () => {
-        chosen.pop();
-        lastItem = chosen[chosen.length - 1];
-        if(!lastItem){
-          data = test1
-        }
-        else{
-          data = other[lastItem]
-        }
-        this.setState({
-          data: data,
-          chosen: chosen
-        });
-      }
+      return this.backFunc
     }
     else{
       return (
