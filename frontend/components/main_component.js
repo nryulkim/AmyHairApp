@@ -8,6 +8,7 @@ import {
 import { windowSize } from '../util/constants'
 import Drawer from './drawer/drawer_container';
 import List from './list/list_container';
+import InfoScreen from './info/info_container';
 
 export default class Root extends Component {
   constructor(props){
@@ -32,7 +33,7 @@ export default class Root extends Component {
     const { active } = this.props.page;
     switch(active){
       case 'product':
-        return;
+        return <InfoScreen/>;
       case 'list':
         return <List/>;
       case 'search':
