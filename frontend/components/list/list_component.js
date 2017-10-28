@@ -5,6 +5,7 @@ import {
 import {
   Container, Card, CardItem, Text, Icon
 } from 'native-base';
+import { windowSize } from '../../util/constants';
 
 class PageList extends Component {
   constructor(props){
@@ -81,7 +82,9 @@ class PageList extends Component {
 
   renderItem(item){
     return(
-      <CardItem style={ styles.button } button onPress={this.handlePress(item)}>
+      <CardItem
+        style={ styles.button }
+        button onPress={this.handlePress(item)}>
         <Text>{item}</Text>
         <Icon name='ios-arrow-forward'/>
       </CardItem>
@@ -96,6 +99,9 @@ class PageList extends Component {
     }
     return(
       <Card
+        style={{
+          width: windowSize.width
+        }}
         dataArray={ data }
         renderRow={ this.renderItem }
         />
@@ -109,5 +115,6 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: 'space-between',
     backgroundColor: '#ececec',
+    width: windowSize.width
   }
 });
