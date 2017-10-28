@@ -7,6 +7,8 @@ import {
 } from 'native-base';
 import { windowSize } from '../../util/constants';
 
+const maxWidth = windowSize.width;
+
 class PageList extends Component {
   constructor(props){
     super(props);
@@ -99,9 +101,6 @@ class PageList extends Component {
     }
     return(
       <Card
-        style={{
-          width: windowSize.width
-        }}
         dataArray={ data }
         renderRow={ this.renderItem }
         />
@@ -115,6 +114,6 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: 'space-between',
     backgroundColor: '#ececec',
-    width: windowSize.width
+    width: maxWidth
   }
 });
