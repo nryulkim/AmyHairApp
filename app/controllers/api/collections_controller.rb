@@ -1,4 +1,9 @@
 class Api::CollectionsController < ApplicationController
+  def index
+    @collections = Collection.includes(:wigs, :products)
+    render :index
+  end
+
   def create
     @collection = Collection.new(collection_params)
     if @collection.save

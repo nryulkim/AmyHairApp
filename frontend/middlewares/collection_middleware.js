@@ -12,6 +12,7 @@ export default ({ getState, dispatch }) => next => action => {
 
   let errors = xhr => {
     errs = xhr.responseJSON;
+    console.log(xhr);
   };
 
   switch(action.type){
@@ -19,11 +20,11 @@ export default ({ getState, dispatch }) => next => action => {
       success = collection => {
         dispatch(receiveAllCollection(collection));
       }
-      CollectionApi.getCollection(action.collection_id, success, errors);
       return next(action);
 
     case(GET_ALL_COLLECTIONS):
       success = collections => {
+        debugger
         dispatch(receiveAllCollections(collections));
       };
       CollectionApi.getAllCollections(success, errors);

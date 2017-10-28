@@ -12,4 +12,12 @@ class Wig < ApplicationRecord
 
   belongs_to :collection
   has_many :products, dependent: :destroy
+
+  def product_names
+    names = []
+    for product in self.products do
+      names.push(product.name)
+    end
+    return names
+  end
 end

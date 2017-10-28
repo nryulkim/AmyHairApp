@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {getAllCollections} from '../actions/collection_actions'
+import {
+  getAllCollections, receiveAllCollections
+} from '../actions/collection_actions'
 import Main from './main_component';
 
 const mapStateToProps = state => ({
@@ -9,7 +11,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  getAllCollections: () => { dispatch(getAllCollections()) }
+  getAllCollections: () => { dispatch(getAllCollections()); },
+  receiveAllCollections: (collections) => {
+    dispatch(receiveAllCollections(collections));
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main)

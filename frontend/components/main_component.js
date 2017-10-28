@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet
+  StyleSheet, AsyncStorage
 } from 'react-native';
 import {
   Container, Header, Title, Content, Footer, FooterTab, Button, Icon, Badge
@@ -10,6 +10,23 @@ import Drawer from './drawer/drawer_container';
 import List from './list/list_container';
 
 export default class Root extends Component {
+  constructor(props){
+    super(props);
+    this.getCollectionsFromStorage = this.getCollectionsFromStorage.bind(this);
+    this.handleSync = this.handleSync.bind(this);
+  }
+
+  componentWillMount(){
+    this.getCollectionsFromStorage();
+  }
+
+  getCollectionsFromStorage() {
+    const { receiveAllCollections } = this.props;
+    AsyncStorage.getItem('collections').then((collections) => {
+      receiveAllCollections(collections);
+    }).done()
+  }
+
   getContent(){
     const { active } = this.props.page;
     switch(active){
@@ -21,14 +38,19 @@ export default class Root extends Component {
         return;
     }
   }
+
+  handleSync(){
+    this.props.getAllCollections()
+  }
+
   render() {
     const { active } = this.props.page;
     return (
       <Container style={{width: windowSize.width}}>
         <Header style={styles.header}>
           <Title style={styles.title}>Amy Hair</Title>
-          <Button transparent>
-            <Icon name='ios-menu'/>
+          <Button transparent onPress={ this.handleSync }>
+            <Icon name='ios-sync'/>
           </Button>
         </Header>
         <Content style={styles.content}>
