@@ -1,7 +1,7 @@
 class Api::CollectionsController < ApplicationController
   def index
     @collections = Collection.includes(:wigs, :products)
-    render 'index.jbuilder'
+    render 'index.json.jbuilder'
   end
 
   def create
