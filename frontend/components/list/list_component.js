@@ -31,7 +31,7 @@ class PageList extends Component {
   }
 
   getData(chosen, props = this.props){
-    const { collections, wigs, prodcuts } = props;
+    const { collections, wigs, prodcuts, selectProduct } = props;
     if(!collections){
       return [];
     }
@@ -49,7 +49,8 @@ class PageList extends Component {
       return wigs[chosen[1]].products;
     }
     else if (type == 3) {
-      // Selected a final product TODO: Display the product page.
+      selectProduct(chosen[2]);
+      return
     }
     return [];
   }

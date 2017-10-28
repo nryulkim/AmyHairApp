@@ -1,5 +1,5 @@
 import {
-  RECEIVE_COLLECTION, RECEIVE_ALL_COLLECTIONS, DOWNLOAD_ALL_COLLECTIONS
+  GET_PRODUCT, RECEIVE_ALL_COLLECTIONS, DOWNLOAD_ALL_COLLECTIONS
 } from '../actions/collection_actions';
 import merge from "lodash.merge";
 import { AsyncStorage } from 'react-native';
@@ -22,8 +22,8 @@ export default (state = defaultState, action) => {
   const newCollections = action.collections ? action.collections : {};
 
   switch(action.type){
-    case RECEIVE_COLLECTION:
-      newState.active = action.collection_id;
+    case GET_PRODUCT:
+      newState.active = action.product_name;
       return newState;
 
     case DOWNLOAD_ALL_COLLECTIONS:
