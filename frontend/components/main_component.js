@@ -22,8 +22,9 @@ export default class Root extends Component {
 
   getCollectionsFromStorage() {
     const { receiveAllCollections } = this.props;
-    AsyncStorage.getItem('collections').then((collections) => {
-      receiveAllCollections(collections);
+
+    AsyncStorage.getItem('@amystore:collections').then((collections) => {
+      receiveAllCollections(JSON.parse(collections));
     }).done()
   }
 

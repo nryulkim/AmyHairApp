@@ -9,6 +9,14 @@ defaultState = {
   items: {}
 }
 
+async function storeData(collections){
+  try {
+    await AsyncStorage.setItem('@amystore:collections', JSON.stringify(collections));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default (state = defaultState, action) => {
   let newState = merge({}, state);
   const newCollections = action.collections ? action.collections : {};
@@ -20,8 +28,7 @@ export default (state = defaultState, action) => {
 
     case DOWNLOAD_ALL_COLLECTIONS:
       newState.items = newCollections;
-      AsyncStorage.setItem('collections': newCollections);
-      console.log(newState);
+      storeData(newCollections);
       return newState;
 
     case RECEIVE_ALL_COLLECTIONS:
