@@ -14,15 +14,21 @@ class PageList extends Component {
       data: data,
       chosen: []
     };
-    console.log(this.props)
     this.handlePress = this.handlePress.bind(this);
     this.renderItem = this.renderItem.bind(this);
     this.backFunc = this.backFunc.bind(this);
     this.getData = this.getData.bind(this);
   }
 
-  getData(chosen){
-    const { collections, wigs, prodcuts } = this.props;
+  componentWillReceiveProps(nextProps){
+    const { chosen } = this.state;
+    this.setState({
+      data: this.getData(chosen, nextProps)
+    })
+  }
+
+  getData(chosen, props = this.props){
+    const { collections, wigs, prodcuts } = props;
     if(!collections){
       return [];
     }

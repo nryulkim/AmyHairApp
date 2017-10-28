@@ -33,7 +33,6 @@ export default (state = defaultState, action) => {
 
     case RECEIVE_ALL_COLLECTIONS:
       newState.items = newCollections;
-      console.log(newState);
       return newState;
 
     default:
