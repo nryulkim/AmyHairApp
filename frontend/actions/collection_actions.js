@@ -2,6 +2,7 @@ export const GET_COLLECTION = 'GET_COLLECTION';
 export const RECEIVE_COLLECTION = 'RECEIVE_COLLECTION';
 export const GET_ALL_COLLECTIONS = 'GET_ALL_COLLECTIONS';
 export const RECEIVE_ALL_COLLECTIONS = 'RECEIVE_ALL_COLLECTIONS';
+export const DOWNLOAD_ALL_COLLECTIONS = 'DOWNLOAD_ALL_COLLECTIONS';
 
 export function getCollection(collection_id){
   return({
@@ -26,6 +27,13 @@ export function getAllCollections(){
 export function receiveAllCollections(collections){
   return({
     type: RECEIVE_ALL_COLLECTIONS,
+    collections
+  });
+}
+
+export function downloadAllCollections(collections){
+  return({
+    type: DOWNLOAD_ALL_COLLECTIONS,
     collections
   });
 }

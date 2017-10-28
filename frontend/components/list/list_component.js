@@ -6,39 +6,51 @@ import {
   Container, Card, CardItem, Text, Icon
 } from 'native-base';
 
-const test1 = ['Hello', 'Bye']
-const other = {
-  Hello: ['my', 'this'],
-  Bye: ['bye'],
-  my: ['name'],
-  this: ['is']
-}
-
 class PageList extends Component {
   constructor(props){
     super(props);
+    const data = this.getData([]);
     this.state = {
-      data: test1,
+      data: data,
       chosen: []
     };
-
+    console.log(this.props)
     this.handlePress = this.handlePress.bind(this);
     this.renderItem = this.renderItem.bind(this);
     this.backFunc = this.backFunc.bind(this);
+    this.getData = this.getData.bind(this);
+  }
+
+  getData(chosen){
+    const { collections, wigs, prodcuts } = this.props;
+    if(!collections){
+      return [];
+    }
+
+    let data = Object.keys(collections);
+    const type = chosen.length;
+
+    if(type == 0){
+      return Object.keys(collections);
+    }
+    else if (type == 1) {
+      return collections[chosen[0]].wigs;
+    }
+    else if (type == 2) {
+      return wigs[chosen[1]].products;
+    }
+    else if (type == 3) {
+      // Selected a final product TODO: Display the product page.
+    }
+    return [];
   }
 
   backFunc() {
     let { data, chosen } = this.state;
     chosen.pop();
-    lastItem = chosen[chosen.length - 1];
-    if(!lastItem){
-      data = test1
-    }
-    else{
-      data = other[lastItem]
-    }
+
     this.setState({
-      data: data,
+      data: this.getData(chosen),
       chosen: chosen
     });
   }
@@ -53,7 +65,7 @@ class PageList extends Component {
         () => {
           chosen.push(item)
           this.setState({
-            data: other[item],
+            data: this.getData(chosen),
             chosen: chosen
           });
         }

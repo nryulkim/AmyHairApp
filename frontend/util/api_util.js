@@ -4,6 +4,6 @@ export function getAllCollections(success, errors){
     method: 'get',
     url: 'https://amyhair-app.herokuapp.com/api/collections'
   })
-  .then((response) => console.log(response))
+  .then((response) => success(response.data))
   .catch((err)=>console.log(err));
 }

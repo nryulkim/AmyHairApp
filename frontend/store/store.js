@@ -10,7 +10,7 @@ const _default = {
   },
   collections: {
     active: -1,
-    list: {}
+    items: {}
   }
 }
 

@@ -1,7 +1,7 @@
 import * as CollectionApi from '../util/api_util';
 import {
   GET_COLLECTION, GET_ALL_COLLECTIONS,
-  receiveCollection, receiveAllCollections
+  receiveCollection, downloadAllCollections
 
 } from '../actions/collection_actions';
 
@@ -24,8 +24,7 @@ export default ({ getState, dispatch }) => next => action => {
 
     case(GET_ALL_COLLECTIONS):
       success = collections => {
-        debugger
-        dispatch(receiveAllCollections(collections));
+        dispatch(downloadAllCollections(collections));
       };
       CollectionApi.getAllCollections(success, errors);
       return next(action);
