@@ -9,6 +9,7 @@ import { windowSize, styles } from '../util/constants'
 import Drawer from './drawer/drawer_container';
 import List from './list/list_container';
 import InfoScreen from './info/info_container';
+import SearchPage from './search/search_container';
 
 export default class Root extends Component {
   constructor(props){
@@ -37,7 +38,7 @@ export default class Root extends Component {
       case 'list':
         return <List/>;
       case 'search':
-        return;
+        return <SearchPage/>;
     }
   }
 

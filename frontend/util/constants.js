@@ -8,12 +8,16 @@ const maxWidth = windowSize.width;
 export const styles = StyleSheet.create({
   button: {
     justifyContent: 'space-between',
-    backgroundColor: '#ececec',
+    backgroundColor: '#fcfcfc',
     width: maxWidth
   },
   title: {
     fontSize: 24,
     fontWeight: "500"
+  },
+  search_container:{
+    backgroundColor: '#fcfcfc',
+    height: 66
   },
   main_header: {
     justifyContent: 'space-between',
@@ -29,5 +33,10 @@ export const styles = StyleSheet.create({
   },
   main_footer: {
     backgroundColor: '#039BE5',
+  },
+  search_listitem: {
+    width: maxWidth,
+    backgroundColor: 'transparent',
+    paddingLeft: 15
   }
 });
