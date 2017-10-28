@@ -5,9 +5,7 @@ import {
 import {
   Container, Card, CardItem, Text, Icon
 } from 'native-base';
-import { windowSize } from '../../util/constants';
-
-const maxWidth = windowSize.width;
+import { styles } from '../../util/constants';
 
 class PageList extends Component {
   constructor(props){
@@ -110,11 +108,3 @@ class PageList extends Component {
 }
 
 export default PageList;
-
-const styles = StyleSheet.create({
-  button: {
-    justifyContent: 'space-between',
-    backgroundColor: '#ececec',
-    width: maxWidth
-  }
-});

@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet
-} from 'react-native';
-import {
   Container, Card, CardItem, Text, Body
 } from 'native-base';
-import { windowSize } from '../../util/constants';
-
-const maxWidth = windowSize.width;
+import { styles } from '../../util/constants';
 
 class InfoScreen extends Component {
   constructor(props){
@@ -49,15 +44,3 @@ class InfoScreen extends Component {
 }
 
 export default InfoScreen;
-
-const styles = StyleSheet.create({
-  button: {
-    justifyContent: 'space-between',
-    backgroundColor: '#ececec',
-    width: maxWidth
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "500"
-  }
-});
