@@ -28,6 +28,9 @@ class Drawer extends Component {
         <Button active={active == 'search'} onPress={this.handlePress('search')}>
           <Icon name='ios-search' />
         </Button>
+        <Button active={active == 'collection'} onPress={this.handlePress('collection')}>
+          <Icon name='ios-apps' />
+        </Button>
       </FooterTab>
     )
   }
