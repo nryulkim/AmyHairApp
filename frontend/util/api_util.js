@@ -1,4 +1,5 @@
-import axios from 'axios'
+import axios from 'axios';
+
 export function getAllCollections(success, errors){
   axios({
     method: 'get',
@@ -6,4 +7,12 @@ export function getAllCollections(success, errors){
   })
   .then((response) => success(response.data))
   .catch((err)=>console.log(err));
+};
+
+function success(x){
+  console.log(x);
+}
+
+export function downloadImages(authKey, authSecret){
+  debugger
 }

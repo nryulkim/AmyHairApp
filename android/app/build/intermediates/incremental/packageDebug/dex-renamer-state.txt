@@ -1,4 +1,4 @@
-#Wed Oct 18 20:48:14 EDT 2017
+#Sun Nov 05 17:04:51 EST 2017
 base.0=/Users/nryulkim/Documents/projects/AmyHair/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/nryulkim/Documents/projects/AmyHair/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, AsyncStorage
+  StyleSheet, AsyncStorage, Alert
 } from 'react-native';
 import {
   Container, Header, Title, Content, Footer, FooterTab, Button, Icon, Badge
@@ -43,7 +43,15 @@ export default class Root extends Component {
   }
 
   handleSync(){
-    this.props.getAllCollections()
+    Alert.alert(
+      'Sync Data',
+      'Would you like to sync your data?',
+      [
+        {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+        {text: 'Yes', onPress: this.props.getAllCollections},
+      ],
+      { cancelable: false }
+    )
   }
 
   render() {

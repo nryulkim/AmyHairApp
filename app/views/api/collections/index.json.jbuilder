@@ -22,7 +22,8 @@
 #     }...
 #   }
 # }
-json.auth_key ENV['db_auth_key']
+json.auth_key ENV['auth_key']
+json.auth_secret ENV['auth_secret']
 
 json.collections do
   @collections.each do |collection|

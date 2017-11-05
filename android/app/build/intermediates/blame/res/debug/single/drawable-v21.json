@@ -1,10 +1,10 @@
 [
     {
         "merged": "/Users/nryulkim/Documents/projects/AmyHair/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/Users/nryulkim/.android/build-cache/dbc44b751573b6f7a243f08bb4483ddcf17f8adc/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "source": "/Users/nryulkim/Documents/projects/AmyHair/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "/Users/nryulkim/Documents/projects/AmyHair/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/Users/nryulkim/.android/build-cache/dbc44b751573b6f7a243f08bb4483ddcf17f8adc/output/res/drawable-v21/abc_btn_colored_material.xml"
+        "source": "/Users/nryulkim/Documents/projects/AmyHair/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-v21/abc_btn_colored_material.xml"
     }
 ]
