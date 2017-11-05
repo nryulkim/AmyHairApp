@@ -1,4 +1,5 @@
 # {
+#   key: auth_key,
 #   collections: {
 #     Collection1: {
 #       object: obj,
@@ -21,6 +22,8 @@
 #     }...
 #   }
 # }
+json.auth_key ENV['db_auth_key']
+
 json.collections do
   @collections.each do |collection|
     json.set! collection.name do

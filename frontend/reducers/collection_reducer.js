@@ -28,6 +28,7 @@ export default (state = defaultState, action) => {
 
     case DOWNLOAD_ALL_COLLECTIONS:
       newState.items = newCollections;
+      debugger
       storeData(newCollections);
       return newState;
 

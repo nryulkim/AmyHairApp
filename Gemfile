@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'figaro'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'pry-rails'
